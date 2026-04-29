@@ -1,7 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck, Sparkles, TrendingUp, CreditCard, Home, Briefcase, PiggyBank, Car, GraduationCap, LineChart, Plane, ChevronRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { useAuth } from "@/lib/auth";
+import { useState } from "react";
 import heroImg from "@/assets/hero-couple.jpg";
 import bizImg from "@/assets/business-owner.jpg";
 import homeImg from "@/assets/home-loans.jpg";
@@ -25,6 +27,22 @@ function Index() {
 }
 
 function Hero() {
+  const { signIn } = useAuth();
+  const nav = useNavigate();
+  const [u, setU] = useState("");
+  const [p, setP] = useState("");
+  const [showPwd, setShowPwd] = useState(false);
+  const [err, setErr] = useState("");
+
+  const onSignIn = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!u.trim() || !p.trim()) {
+      setErr("Enter a username and password.");
+      return;
+    }
+    signIn(u.trim());
+    nav({ to: "/dashboard" });
+  };
   return (
     <section className="relative" style={{ background: "var(--gradient-hero)" }}>
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 lg:grid-cols-[1.4fr_0.9fr] lg:gap-12 lg:px-8 lg:py-16">
@@ -52,17 +70,17 @@ function Hero() {
         {/* Sign-in card */}
         <div className="rounded-md bg-card p-6 text-card-foreground sm:p-8" style={{ boxShadow: "var(--shadow-elevated)" }}>
           <h2 className="font-display text-2xl font-semibold text-foreground">Welcome</h2>
-          <form className="mt-6 space-y-5">
+          <form className="mt-6 space-y-5" onSubmit={onSignIn}>
             <div>
               <label htmlFor="username" className="block text-xs text-muted-foreground">Username</label>
-              <input id="username" type="text" className="mt-1 w-full border-0 border-b border-border bg-transparent py-2 text-sm outline-none focus:border-primary" />
+              <input id="username" type="text" value={u} onChange={(e) => setU(e.target.value)} className="mt-1 w-full border-0 border-b border-border bg-transparent py-2 text-sm outline-none focus:border-primary" />
             </div>
             <div>
               <div className="flex items-end justify-between">
                 <label htmlFor="password" className="block text-xs text-muted-foreground">Password</label>
-                <button type="button" className="text-xs font-semibold text-primary hover:underline">Show</button>
+                <button type="button" onClick={() => setShowPwd((v) => !v)} className="text-xs font-semibold text-primary hover:underline">{showPwd ? "Hide" : "Show"}</button>
               </div>
-              <input id="password" type="password" className="mt-1 w-full border-0 border-b border-border bg-transparent py-2 text-sm outline-none focus:border-primary" />
+              <input id="password" type={showPwd ? "text" : "password"} value={p} onChange={(e) => setP(e.target.value)} className="mt-1 w-full border-0 border-b border-border bg-transparent py-2 text-sm outline-none focus:border-primary" />
             </div>
             <div className="flex items-center justify-between text-sm">
               <label className="inline-flex items-center gap-2 text-foreground/80">
@@ -73,7 +91,8 @@ function Hero() {
                 Use token <ChevronRight className="h-4 w-4" />
               </button>
             </div>
-            <button type="button" className="w-full rounded-md bg-primary py-3 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
+            {err && <p className="text-sm text-destructive">{err}</p>}
+            <button type="submit" className="w-full rounded-md bg-primary py-3 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
               Sign in
             </button>
             <div className="space-y-2 pt-1 text-sm">
@@ -81,9 +100,9 @@ function Hero() {
                 Forgot username/password? <ChevronRight className="h-4 w-4" />
               </button>
               <br />
-              <button type="button" className="inline-flex items-center font-semibold text-foreground hover:text-primary">
+              <Link to="/signup" className="inline-flex items-center font-semibold text-foreground hover:text-primary">
                 Not enrolled? Sign up now. <ChevronRight className="h-4 w-4" />
-              </button>
+              </Link>
             </div>
           </form>
         </div>
