@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ShieldCheck, Sparkles, TrendingUp, CreditCard, Home, Briefcase, PiggyBank, Car, GraduationCap, LineChart, Plane, ChevronRight, ChevronLeft, CalendarCheck, Gauge, Building2 } from "lucide-react";
+import { Sparkles, CreditCard, Home, Briefcase, PiggyBank, Car, GraduationCap, LineChart, Plane, ChevronRight, ChevronLeft, CalendarCheck, Gauge, Building2 } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { useAuth } from "@/lib/auth";
@@ -20,7 +20,7 @@ function Index() {
       <CardTiles />
       <PaymentsRow />
       <InvestPromo />
-      <Promise />
+      <BonusRow />
       <SiteFooter />
     </div>
   );
@@ -226,10 +226,6 @@ function CardTiles() {
   );
 }
 
-function Promise() {
-  return PromiseSection();
-}
-
 function PaymentsRow() {
   return (
     <section className="border-t border-border bg-background">
@@ -276,25 +272,24 @@ function InvestPromo() {
   );
 }
 
-function PromiseSection() {
-  const items = [
-    { icon: ShieldCheck, title: "Security you can count on", body: "Bank-grade encryption, fraud monitoring, and our $0 liability promise." },
-    { icon: TrendingUp, title: "Tools that grow with you", body: "Smart insights and automated savings — built into every account." },
-    { icon: Sparkles, title: "Service that feels human", body: "24/7 live support and 4,700+ branches across the country." },
-  ];
+function BonusRow() {
   return (
-    <section className="bg-secondary">
-      <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-3">
-          {items.map((i) => (
-            <div key={i.title} className="flex flex-col">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
-                <i.icon className="h-6 w-6 text-primary-foreground" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-foreground">{i.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{i.body}</p>
-            </div>
-          ))}
+    <section className="border-t border-border bg-background">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 lg:grid-cols-2 lg:gap-16 lg:px-8">
+        <div className="flex aspect-[4/3] items-center justify-center rounded-md p-10 text-center" style={{ background: "var(--color-primary)" }}>
+          <div className="rounded-md bg-card px-10 py-12 shadow-lg">
+            <p className="font-display text-5xl font-extrabold leading-none text-primary sm:text-7xl">$200</p>
+            <p className="mt-2 font-display text-3xl font-extrabold tracking-wide text-primary sm:text-5xl">BONUS</p>
+          </div>
+        </div>
+        <div>
+          <h2 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">Start your money journey today</h2>
+          <p className="mt-4 text-base text-muted-foreground">
+            As a new Northwind checking customer, get $200 when you open a Northwind Everyday Checking account with qualifying transactions. Plus, <strong className="text-foreground">$0 Monthly Service Fee for customers age 17–24</strong>.
+          </p>
+          <button className="mt-6 rounded-sm bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
+            Open now
+          </button>
         </div>
       </div>
     </section>
