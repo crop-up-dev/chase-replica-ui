@@ -227,6 +227,56 @@ function CardTiles() {
 }
 
 function Promise() {
+  return PromiseSection();
+}
+
+function PaymentsRow() {
+  return (
+    <section className="border-t border-border bg-background">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 lg:grid-cols-2 lg:gap-16 lg:px-8">
+        <div className="overflow-hidden rounded-md">
+          <img src={payImg} alt="Merchant accepting a contactless card payment" loading="lazy" width={1024} height={768} className="h-full w-full object-cover" />
+        </div>
+        <div>
+          <h2 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">Accept payments anytime, anywhere</h2>
+          <p className="mt-4 text-base text-muted-foreground">
+            Make sure you're prepared for every sale, wherever your customers want to pay. Process credit cards anywhere in the U.S.
+          </p>
+          <button className="mt-6 rounded-sm bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
+            Learn more
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function InvestPromo() {
+  return (
+    <section className="border-t border-border bg-background">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 lg:grid-cols-2 lg:gap-16 lg:px-8">
+        <div>
+          <h2 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">Commission-free online trades — plus a bonus</h2>
+          <p className="mt-4 text-base text-muted-foreground">
+            This is an invitation to get up to $1,000 when you open and fund a Northwind Self-Directed Investing account — an investing experience that puts you in control.
+          </p>
+          <button className="mt-6 rounded-sm bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
+            Continue
+          </button>
+        </div>
+        <div className="flex aspect-[4/3] items-center justify-center rounded-md bg-secondary p-10 text-center">
+          <div>
+            <p className="font-display text-2xl text-foreground/80 sm:text-3xl">Earn up to</p>
+            <p className="mt-2 font-display text-6xl font-semibold tracking-tight text-foreground sm:text-7xl">$1,000</p>
+            <p className="mt-2 font-display text-2xl text-foreground/80 sm:text-3xl">cash bonus</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PromiseSection() {
   const items = [
     { icon: ShieldCheck, title: "Security you can count on", body: "Bank-grade encryption, fraud monitoring, and our $0 liability promise." },
     { icon: TrendingUp, title: "Tools that grow with you", body: "Smart insights and automated savings — built into every account." },
