@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { useAuth } from "@/lib/auth";
 import { useState } from "react";
 import heroImg from "@/assets/hero-couple.jpg";
+import payImg from "@/assets/accept-payments.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -17,6 +18,8 @@ function Index() {
       <Hero />
       <ChooseRight />
       <CardTiles />
+      <PaymentsRow />
+      <InvestPromo />
       <Promise />
       <SiteFooter />
     </div>
