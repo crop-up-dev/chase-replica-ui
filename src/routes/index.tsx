@@ -278,14 +278,14 @@ function BonusRow() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="flex aspect-[4/3] items-center justify-center rounded-md p-10 text-center" style={{ background: "var(--color-primary)" }}>
           <div className="rounded-md bg-card px-10 py-12 shadow-lg">
-            <p className="font-display text-5xl font-extrabold leading-none text-primary sm:text-7xl">$200</p>
+            <p className="font-display text-5xl font-extrabold leading-none text-primary sm:text-7xl">$125</p>
             <p className="mt-2 font-display text-3xl font-extrabold tracking-wide text-primary sm:text-5xl">BONUS</p>
           </div>
         </div>
         <div>
           <h2 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">Start your money journey today</h2>
           <p className="mt-4 text-base text-muted-foreground">
-            As a new Northwind checking customer, get $200 when you open a Northwind Everyday Checking account with qualifying transactions. Plus, <strong className="text-foreground">$0 Monthly Service Fee for customers age 17–24</strong>.
+            As a new Northwind checking customer, get $125 when you open a Northwind Everyday Checking account with qualifying transactions. Plus, <strong className="text-foreground">$0 Monthly Service Fee for customers age 17–24</strong>.
           </p>
           <button className="mt-6 rounded-sm bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
             Open now
