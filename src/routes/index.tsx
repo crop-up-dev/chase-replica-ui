@@ -1,13 +1,10 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Sparkles, TrendingUp, CreditCard, Home, Briefcase, PiggyBank, Car, GraduationCap, LineChart, Plane, ChevronRight, ChevronLeft, CalendarCheck, Gauge, Building2 } from "lucide-react";
+import { ShieldCheck, Sparkles, TrendingUp, CreditCard, Home, Briefcase, PiggyBank, Car, GraduationCap, LineChart, Plane, ChevronRight, ChevronLeft, CalendarCheck, Gauge, Building2 } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { useAuth } from "@/lib/auth";
 import { useState } from "react";
 import heroImg from "@/assets/hero-couple.jpg";
-import bizImg from "@/assets/business-owner.jpg";
-import homeImg from "@/assets/home-loans.jpg";
-import investImg from "@/assets/investing.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
