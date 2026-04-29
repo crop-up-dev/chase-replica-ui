@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Sparkles, TrendingUp, CreditCard, Home, Briefcase, PiggyBank, Car, GraduationCap, LineChart, Plane, ChevronRight } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles, TrendingUp, CreditCard, Home, Briefcase, PiggyBank, Car, GraduationCap, LineChart, Plane, ChevronRight, ChevronLeft, CalendarCheck, Gauge, Building2 } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { useAuth } from "@/lib/auth";
@@ -19,7 +19,7 @@ function Index() {
       <SiteHeader />
       <Hero />
       <ChooseRight />
-      <ProductGrid />
+      <CardTiles />
       <Promise />
       <SiteFooter />
     </div>
