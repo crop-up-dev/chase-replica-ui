@@ -9,16 +9,34 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as SigninRouteImport } from './routes/signin'
 import { Route as PersonalRouteImport } from './routes/personal'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CommercialRouteImport } from './routes/commercial'
 import { Route as BusinessRouteImport } from './routes/business'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SigninRoute = SigninRouteImport.update({
+  id: '/signin',
+  path: '/signin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PersonalRoute = PersonalRouteImport.update({
   id: '/personal',
   path: '/personal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -53,7 +71,10 @@ export interface FileRoutesByFullPath {
   '/business': typeof BusinessRoute
   '/commercial': typeof CommercialRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/personal': typeof PersonalRoute
+  '/signin': typeof SigninRoute
+  '/signup': typeof SignupRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +82,10 @@ export interface FileRoutesByTo {
   '/business': typeof BusinessRoute
   '/commercial': typeof CommercialRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/personal': typeof PersonalRoute
+  '/signin': typeof SigninRoute
+  '/signup': typeof SignupRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +94,10 @@ export interface FileRoutesById {
   '/business': typeof BusinessRoute
   '/commercial': typeof CommercialRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/personal': typeof PersonalRoute
+  '/signin': typeof SigninRoute
+  '/signup': typeof SignupRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -80,9 +107,21 @@ export interface FileRouteTypes {
     | '/business'
     | '/commercial'
     | '/contact'
+    | '/dashboard'
     | '/personal'
+    | '/signin'
+    | '/signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/business' | '/commercial' | '/contact' | '/personal'
+  to:
+    | '/'
+    | '/about'
+    | '/business'
+    | '/commercial'
+    | '/contact'
+    | '/dashboard'
+    | '/personal'
+    | '/signin'
+    | '/signup'
   id:
     | '__root__'
     | '/'
@@ -90,7 +129,10 @@ export interface FileRouteTypes {
     | '/business'
     | '/commercial'
     | '/contact'
+    | '/dashboard'
     | '/personal'
+    | '/signin'
+    | '/signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -99,16 +141,40 @@ export interface RootRouteChildren {
   BusinessRoute: typeof BusinessRoute
   CommercialRoute: typeof CommercialRoute
   ContactRoute: typeof ContactRoute
+  DashboardRoute: typeof DashboardRoute
   PersonalRoute: typeof PersonalRoute
+  SigninRoute: typeof SigninRoute
+  SignupRoute: typeof SignupRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signin': {
+      id: '/signin'
+      path: '/signin'
+      fullPath: '/signin'
+      preLoaderRoute: typeof SigninRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/personal': {
       id: '/personal'
       path: '/personal'
       fullPath: '/personal'
       preLoaderRoute: typeof PersonalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -155,7 +221,10 @@ const rootRouteChildren: RootRouteChildren = {
   BusinessRoute: BusinessRoute,
   CommercialRoute: CommercialRoute,
   ContactRoute: ContactRoute,
+  DashboardRoute: DashboardRoute,
   PersonalRoute: PersonalRoute,
+  SigninRoute: SigninRoute,
+  SignupRoute: SignupRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
