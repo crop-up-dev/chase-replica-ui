@@ -20,7 +20,7 @@ function Index() {
       <CardTiles />
       <PaymentsRow />
       <InvestPromo />
-      <Promise />
+      <BonusRow />
       <SiteFooter />
     </div>
   );
