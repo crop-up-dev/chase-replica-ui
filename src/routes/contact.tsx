@@ -19,7 +19,7 @@ function Page() {
         <div className="space-y-6">
           {[
             { icon: Phone, label: "Phone", value: "1-800-" },
-            { icon: Mail, label: "Email", value: "support@northwind.example" },
+            { icon: Mail, label: "Email", value: "support@bank.example" },
             { icon: MapPin, label: "HQ", value: "270 Harbor St, Seattle, WA" },
           ].map((c) => (
             <div key={c.label} className="flex items-start gap-4">
