@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Landmark, Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const columns = [
   {
@@ -53,9 +54,8 @@ export function SiteFooter() {
       {/* Top intro columns */}
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
-          <Link to="/" className="flex items-center gap-2">
-            <Landmark className="h-7 w-7 text-primary" />
-            <span className="font-display text-2xl font-bold tracking-tight text-foreground">NORTHWIND</span>
+          <Link to="/" className="flex items-center" aria-label="Home">
+            <img src={logo} alt="Logo" className="h-10 w-auto" />
           </Link>
 
           <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
