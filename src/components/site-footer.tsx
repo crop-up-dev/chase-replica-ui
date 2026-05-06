@@ -37,6 +37,85 @@ const columns = [
   },
 ];
 
+const columnsRow2 = [
+  {
+    title: "Auto",
+    body: (
+      <>
+        <FLink>Auto</FLink> is here to help you get the right car. Apply for <FLink>auto financing</FLink> for a new or used car. Use the <FLink>payment calculator</FLink> to estimate monthly payments. Check out the <FLink>Auto Education Center</FLink> to get car guidance from a trusted source.
+      </>
+    ),
+  },
+  {
+    title: "For Business",
+    body: (
+      <>
+        With <FLink>Business</FLink> you'll receive all-in-one services and guidance from a team of business professionals. Explore <FLink>business checking</FLink>, simplify payments acceptance with <FLink>merchant services</FLink>, and consider <FLink>small business loans</FLink> or <FLink>business credit cards</FLink> for help with growth. You can also visit our <FLink>business resource center</FLink>.
+      </>
+    ),
+  },
+  {
+    title: "Sports & Entertainment",
+    body: (
+      <>
+        We give you access to unique sports, entertainment and culinary events through <FLink>Experiences</FLink> and our exclusive partnerships such as the <FLink>US Open</FLink>, <FLink>Madison Square Garden</FLink> and <FLink>Center</FLink>.
+      </>
+    ),
+  },
+  {
+    title: "Security Center",
+    body: (
+      <>
+        Our <FLink>suite of security features</FLink> can <FLink>help you protect</FLink> your info, money and give you peace of mind. See how we're dedicated to helping <FLink>protect you</FLink>, your accounts and your loved ones from <FLink>financial abuse</FLink>. Also, <FLink>learn about the common tricks scammers are using</FLink> to help you stay one step ahead of them. If you see unauthorized charges or believe your account was compromised contact us right away to <FLink>report fraud</FLink>.
+      </>
+    ),
+  },
+];
+
+const columnsRow3 = [
+  {
+    title: "About Us",
+    body: (
+      <>
+        We serve millions of people with a broad range of products. <FLink>Online</FLink> lets you manage your accounts, view statements, monitor activity, pay bills or transfer funds securely from one central place. To learn more, visit the <FLink>Banking Education Center</FLink>. For questions or concerns, please contact <FLink>customer service</FLink> or let us know about <FLink>complaints and feedback</FLink>. View the <FLink>Community Reinvestment Act Public File</FLink> for the bank's latest CRA rating and other CRA-related information.
+      </>
+    ),
+  },
+  {
+    title: "Investing by the Bank",
+    body: (
+      <>
+        Partner with a global leader who puts your financial needs first. <FLink>Invest on your own</FLink> or <FLink>work with an advisor</FLink> — we have the <FLink>products</FLink>, <FLink>technology</FLink> and <FLink>investment education</FLink>, to help you grow your wealth. Visit a <FLink>Wealth Management Branch</FLink> or check out our latest online investing <FLink>features</FLink>, <FLink>offers, promotions, and coupons</FLink>.
+        <br /><br />
+        <strong className="text-foreground">INVESTMENT AND INSURANCE PRODUCTS ARE:</strong>
+        <ul className="mt-2 list-disc pl-5 text-foreground">
+          <li>NOT FDIC INSURED</li>
+          <li>NOT INSURED BY ANY FEDERAL GOVERNMENT AGENCY</li>
+          <li>NOT A DEPOSIT OR OTHER OBLIGATION OF, OR GUARANTEED BY, THE BANK, N.A. OR ANY OF ITS AFFILIATES</li>
+          <li>SUBJECT TO INVESTMENT RISKS, INCLUDING POSSIBLE LOSS OF THE PRINCIPAL AMOUNT INVESTED</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    title: "Private Client",
+    body: (
+      <>
+        Get more from a personalized relationship offering <FLink>no everyday banking fees</FLink>, priority service from a <FLink>dedicated team</FLink> and <FLink>special perks and benefits</FLink>. Connect with a Private Client Banker at your nearest <FLink>branch</FLink> to learn about eligibility requirements and all available benefits.
+        <br /><br />
+        <strong className="text-foreground">INVESTMENT AND INSURANCE PRODUCTS ARE:</strong>
+        <ul className="mt-2 list-disc pl-5 text-foreground">
+          <li>NOT A DEPOSIT</li>
+          <li>NOT FDIC INSURED</li>
+          <li>NOT INSURED BY ANY FEDERAL GOVERNMENT AGENCY</li>
+          <li>NO BANK GUARANTEE</li>
+          <li>MAY LOSE VALUE</li>
+        </ul>
+      </>
+    ),
+  },
+];
+
 function FLink({ children }: { children: React.ReactNode }) {
   return <a href="#" className="text-primary underline hover:no-underline">{children}</a>;
 }
@@ -64,6 +143,26 @@ export function SiteFooter() {
                 <h4 className="font-semibold text-foreground">{c.title}</h4>
                 <div className="mt-3 h-px w-10 bg-border" />
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {columnsRow2.map((c) => (
+              <div key={c.title}>
+                <h4 className="font-semibold text-foreground">{c.title}</h4>
+                <div className="mt-3 h-px w-10 bg-border" />
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {columnsRow3.map((c) => (
+              <div key={c.title}>
+                <h4 className="font-semibold text-foreground">{c.title}</h4>
+                <div className="mt-3 h-px w-10 bg-border" />
+                <div className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.body}</div>
               </div>
             ))}
           </div>
