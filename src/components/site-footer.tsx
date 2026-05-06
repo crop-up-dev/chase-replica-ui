@@ -187,26 +187,48 @@ export function SiteFooter() {
         </div>
       </div>
 
-      {/* Social + legal */}
+      {/* Other Products & Services + socials */}
       <div className="border-t border-border">
-        <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
-          <div className="flex flex-wrap items-center justify-between gap-6">
-            <div className="flex gap-5 text-muted-foreground">
-              <a href="#" aria-label="Facebook"><Facebook className="h-5 w-5 hover:text-primary" /></a>
-              <a href="#" aria-label="Twitter"><Twitter className="h-5 w-5 hover:text-primary" /></a>
-              <a href="#" aria-label="Instagram"><Instagram className="h-5 w-5 hover:text-primary" /></a>
-              <a href="#" aria-label="LinkedIn"><Linkedin className="h-5 w-5 hover:text-primary" /></a>
-              <a href="#" aria-label="YouTube"><Youtube className="h-5 w-5 hover:text-primary" /></a>
-            </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-              {["Accessibility", "Privacy", "Security", "Terms of use", "About our ads", "AdChoices", "Site map"].map((l) => (
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 lg:grid-cols-2 lg:px-8">
+          <div>
+            <h4 className="font-semibold text-foreground">Other Products & Services:</h4>
+            <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm sm:grid-cols-5">
+              {["Deposit Account Agreements", "Mobile Banking", "Online Banking", "Student Center", "Zelle®"].map((l) => (
                 <a key={l} href="#" className="text-primary hover:underline">{l}</a>
               ))}
             </div>
           </div>
-          <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
-            "our," "the Bank," and the our columned logo are fictitious marks used for this demonstration site only. This is not a real bank and no real banking services are offered. Deposits are not insured. © {new Date().getFullYear()} Bank, Demo. All rights reserved.
-          </p>
+          <div className="flex items-start justify-end gap-5 text-muted-foreground">
+            <a href="#" aria-label="Facebook"><Facebook className="h-5 w-5 hover:text-primary" /></a>
+            <a href="#" aria-label="Instagram"><Instagram className="h-5 w-5 hover:text-primary" /></a>
+            <a href="#" aria-label="Twitter"><Twitter className="h-5 w-5 hover:text-primary" /></a>
+            <a href="#" aria-label="YouTube"><Youtube className="h-5 w-5 hover:text-primary" /></a>
+            <a href="#" aria-label="LinkedIn"><Linkedin className="h-5 w-5 hover:text-primary" /></a>
+          </div>
+        </div>
+      </div>
+
+      {/* Legal + utility links */}
+      <div className="border-t border-border">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 lg:grid-cols-2 lg:px-8">
+          <div className="grid gap-6 text-xs leading-relaxed text-muted-foreground sm:grid-cols-2">
+            <p>
+              "the Bank," and the Bank logo are trademarks of the Bank, N.A. The Bank, N.A. is a wholly-owned subsidiary of the Bank & Co.
+            </p>
+            <p>
+              Bank deposit accounts, such as checking and savings, may be subject to approval. Deposit products and related services are offered by the Bank, N.A. Member FDIC.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-3">
+            {["Customer Service", "J.P. Bank", "Bank Group", "Media Center", "Careers", "Site Map", "Privacy", "Security", "Terms of Use", "Accessibility", "AdChoices", "Give feedback"].map((l) => (
+              <a key={l} href="#" className="text-primary hover:underline">{l}</a>
+            ))}
+            <span className="text-muted-foreground">Member FDIC</span>
+            <span className="text-muted-foreground">⌂ Equal Housing Opportunity</span>
+          </div>
+        </div>
+        <div className="mx-auto max-w-7xl px-4 pb-8 lg:px-8">
+          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} the Bank & Co.</p>
         </div>
       </div>
     </footer>
