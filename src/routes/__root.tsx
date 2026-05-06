@@ -30,9 +30,9 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Northwind Bank — Banking, credit cards, mortgages & investing" },
-      { name: "description", content: "Northwind Bank offers personal and business banking, credit cards, mortgages and investing — built on trust and craft." },
-      { property: "og:title", content: "Northwind Bank" },
+      { title: "Bank — Banking, credit cards, mortgages & investing" },
+      { name: "description", content: "Bank offers personal and business banking, credit cards, mortgages and investing — built on trust and craft." },
+      { property: "og:title", content: "Bank" },
       { property: "og:description", content: "Personal and business banking, built on trust and craft." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

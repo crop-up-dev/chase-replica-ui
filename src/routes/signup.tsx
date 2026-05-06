@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 
 export const Route = createFileRoute("/signup")({
   component: SignUp,
-  head: () => ({ meta: [{ title: "Sign up — Northwind Bank" }] }),
+  head: () => ({ meta: [{ title: "Sign up — Bank" }] }),
 });
 
 function SignUp() {
@@ -35,7 +35,7 @@ function SignUp() {
       <main className="flex-1 mx-auto w-full max-w-md px-4 py-16">
         <div className="flex items-center gap-2 mb-8">
           <Landmark className="h-7 w-7 text-primary" />
-          <span className="font-display text-2xl font-bold text-primary-deep">NORTHWIND</span>
+          <span className="font-display text-2xl font-bold text-primary-deep"></span>
         </div>
         <h1 className="font-display text-3xl font-semibold text-foreground">Create your account</h1>
         <p className="mt-2 text-sm text-muted-foreground">Demo only — any details are accepted.</p>

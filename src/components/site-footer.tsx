@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { Landmark, Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const columns = [
   {
     title: "Checking Accounts",
     body: (
       <>
-        Choose the <FLink>checking account</FLink> that works best for you. See our <FLink>Northwind Everyday Checking®</FLink> offer for new customers. Make purchases with your debit card, and bank from almost anywhere by phone, tablet or computer and more than 14,000 ATMs and 5,000 branches.
+        Choose the <FLink>checking account</FLink> that works best for you. See our <FLink>our Everyday Checking®</FLink> offer for new customers. Make purchases with your debit card, and bank from almost anywhere by phone, tablet or computer and more than 14,000 ATMs and 5,000 branches.
       </>
     ),
   },
@@ -22,7 +23,7 @@ const columns = [
     title: "Credit Cards",
     body: (
       <>
-        Northwind <FLink>credit cards</FLink> can help you buy the things you need. Many of our cards <FLink>offer rewards</FLink> that can be redeemed for <FLink>cash back</FLink> or <FLink>travel-related</FLink> perks. With so many options, it can be easy to find a card that matches your lifestyle. Plus, with Credit Journey you can get a <FLink>free credit score</FLink>!
+        our <FLink>credit cards</FLink> can help you buy the things you need. Many of our cards <FLink>offer rewards</FLink> that can be redeemed for <FLink>cash back</FLink> or <FLink>travel-related</FLink> perks. With so many options, it can be easy to find a card that matches your lifestyle. Plus, with Credit Journey you can get a <FLink>free credit score</FLink>!
       </>
     ),
   },
@@ -30,7 +31,7 @@ const columns = [
     title: "Mortgages",
     body: (
       <>
-        Apply for a <FLink>mortgage</FLink> or <FLink>refinance your mortgage</FLink> with Northwind. View today's <FLink>mortgage rates</FLink> or calculate what you can afford with our <FLink>mortgage calculator</FLink>. Visit our <FLink>Education Center</FLink> for homebuying tips and more.
+        Apply for a <FLink>mortgage</FLink> or <FLink>refinance your mortgage</FLink> with our. View today's <FLink>mortgage rates</FLink> or calculate what you can afford with our <FLink>mortgage calculator</FLink>. Visit our <FLink>Education Center</FLink> for homebuying tips and more.
       </>
     ),
   },
@@ -41,10 +42,10 @@ function FLink({ children }: { children: React.ReactNode }) {
 }
 
 const bottomGroups = [
-  { title: "Investing by J.M. Northwind", links: ["Online Investing", "Retirement", "Wealth Management", "Investment Advisors"] },
+  { title: "Investing by the Bank", links: ["Online Investing", "Retirement", "Wealth Management", "Investment Advisors"] },
   { title: "Business Banking", links: ["Business Checking", "Merchant Services", "Business Credit Cards", "Loans & Lines of Credit"] },
   { title: "Commercial Banking", links: ["Industries", "Insights", "Solutions", "About Us"] },
-  { title: "About Northwind", links: ["Media Center", "Careers", "Investor Relations", "Sustainability"] },
+  { title: "About our", links: ["Media Center", "Careers", "Investor Relations", "Sustainability"] },
 ];
 
 export function SiteFooter() {
@@ -53,9 +54,8 @@ export function SiteFooter() {
       {/* Top intro columns */}
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
-          <Link to="/" className="flex items-center gap-2">
-            <Landmark className="h-7 w-7 text-primary" />
-            <span className="font-display text-2xl font-bold tracking-tight text-foreground">NORTHWIND</span>
+          <Link to="/" className="flex items-center" aria-label="Home">
+            <img src={logo} alt="Logo" className="h-10 w-auto" />
           </Link>
 
           <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -106,7 +106,7 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
-            "Northwind," "J.M. Northwind," and the Northwind columned logo are fictitious marks used for this demonstration site only. This is not a real bank and no real banking services are offered. Deposits are not insured. © {new Date().getFullYear()} Northwind Bank, Demo. All rights reserved.
+            "our," "the Bank," and the our columned logo are fictitious marks used for this demonstration site only. This is not a real bank and no real banking services are offered. Deposits are not insured. © {new Date().getFullYear()} Bank, Demo. All rights reserved.
           </p>
         </div>
       </div>

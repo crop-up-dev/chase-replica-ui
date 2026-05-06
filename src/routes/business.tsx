@@ -4,9 +4,9 @@ import { Briefcase, Receipt, Users, TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/business")({
   head: () => ({ meta: [
-    { title: "Business Banking — Northwind Bank" },
+    { title: "Business Banking — Bank" },
     { name: "description", content: "Business checking, payroll, lending and merchant services for growing companies." },
-    { property: "og:title", content: "Business Banking — Northwind Bank" },
+    { property: "og:title", content: "Business Banking — Bank" },
     { property: "og:description", content: "Banking and payments built for growing companies." },
   ] }),
   component: Page,

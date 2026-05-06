@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Landmark, Menu, X, Search, ChevronDown, ChevronUp, User } from "lucide-react";
+import { Menu, X, Search, ChevronDown, ChevronUp, User } from "lucide-react";
+import logo from "@/assets/logo.png";
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "@/lib/auth";
 
@@ -112,11 +113,8 @@ export function SiteHeader() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 pt-3 lg:px-8">
-        <Link to="/" className="inline-flex items-center gap-2">
-          <Landmark className="h-7 w-7 text-primary" />
-          <span className="font-display text-2xl font-bold tracking-tight text-primary-deep">
-            NORTHWIND
-          </span>
+        <Link to="/" className="inline-flex items-center" aria-label="Home">
+          <img src={logo} alt="Logo" className="h-10 w-auto" />
         </Link>
       </div>
 
