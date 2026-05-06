@@ -45,7 +45,7 @@ function Hero() {
   };
   return (
     <section className="relative" style={{ background: "var(--gradient-hero)" }}>
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 lg:grid-cols-[1.4fr_0.9fr] lg:gap-12 lg:px-8 lg:py-16">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 lg:grid-cols-[1fr_360px] lg:gap-10 lg:px-8 lg:py-12">
         {/* Promo card */}
         <div className="flex flex-col justify-center text-primary-foreground lg:flex-row lg:items-center lg:gap-10">
           <div className="hidden shrink-0 overflow-hidden rounded-md bg-card p-5 lg:block" style={{ boxShadow: "var(--shadow-card)" }}>
@@ -68,9 +68,9 @@ function Hero() {
         </div>
 
         {/* Sign-in card */}
-        <div className="rounded-md bg-card p-6 text-card-foreground sm:p-8" style={{ boxShadow: "var(--shadow-elevated)" }}>
-          <h2 className="font-display text-2xl font-semibold text-foreground">Welcome</h2>
-          <form className="mt-6 space-y-5" onSubmit={onSignIn}>
+        <div className="w-full rounded-sm bg-card p-5 text-card-foreground sm:p-6 lg:max-w-[360px]" style={{ boxShadow: "var(--shadow-elevated)" }}>
+          <h2 className="text-[28px] font-light leading-tight text-foreground">Welcome</h2>
+          <form className="mt-4 space-y-4" onSubmit={onSignIn}>
             <div>
               <label htmlFor="username" className="block text-xs text-muted-foreground">Username</label>
               <input id="username" type="text" value={u} onChange={(e) => setU(e.target.value)} className="mt-1 w-full border-0 border-b border-border bg-transparent py-2 text-sm outline-none focus:border-primary" />
@@ -92,7 +92,7 @@ function Hero() {
               </button>
             </div>
             {err && <p className="text-sm text-destructive">{err}</p>}
-            <button type="submit" className="w-full rounded-md bg-primary py-3 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
+            <button type="submit" className="w-full rounded-sm bg-primary py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
               Sign in
             </button>
             <div className="space-y-2 pt-1 text-sm">
@@ -192,29 +192,29 @@ function CardTiles() {
     },
   ];
   return (
-    <section className="bg-background pb-20">
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 lg:grid-cols-3 lg:px-8">
+    <section className="bg-background pb-16">
+      <div className="mx-auto grid max-w-7xl gap-5 px-4 lg:grid-cols-3 lg:px-8">
         {cards.map((c) => {
           const isDark = c.tone === "dark";
           return (
-            <article key={c.title} className="overflow-hidden rounded-md bg-card" style={{ boxShadow: "var(--shadow-card)" }}>
+            <article key={c.title} className="flex flex-col overflow-hidden rounded-sm bg-card" style={{ boxShadow: "var(--shadow-card)" }}>
               <div
-                className="flex items-start justify-between gap-4 p-6"
+                className="flex items-start justify-between gap-3 p-5"
                 style={{
                   background: isDark
                     ? "linear-gradient(135deg, oklch(0.28 0.12 258), oklch(0.22 0.1 258))"
                     : "var(--color-primary)",
                   color: "var(--color-primary-foreground)",
-                  minHeight: "140px",
+                  minHeight: "120px",
                 }}
               >
-                <h3 className="font-display text-2xl font-semibold leading-tight">{c.brand}</h3>
-                <c.icon className="h-10 w-10 shrink-0 opacity-90" strokeWidth={1.5} />
+                <h3 className="text-[20px] font-light leading-snug">{c.brand}</h3>
+                <c.icon className="h-8 w-8 shrink-0 opacity-90" strokeWidth={1.25} />
               </div>
-              <div className="flex flex-col p-6">
-                <h4 className="font-display text-xl font-semibold text-foreground">{c.title}</h4>
-                <p className="mt-3 text-sm text-muted-foreground">{c.body}</p>
-                <button className="mt-6 self-start rounded-sm bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
+              <div className="flex flex-1 flex-col p-5">
+                <h4 className="text-[18px] font-semibold text-foreground">{c.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+                <button className="mt-5 self-start rounded-sm bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
                   {c.cta}
                 </button>
               </div>
