@@ -7,7 +7,7 @@ import { CreditCard, PiggyBank, TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/dashboard")({
   component: Dashboard,
-  head: () => ({ meta: [{ title: "Your dashboard — Northwind Bank" }] }),
+  head: () => ({ meta: [{ title: "Your dashboard — Bank" }] }),
 });
 
 function Dashboard() {

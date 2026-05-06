@@ -4,9 +4,9 @@ import { CreditCard, PiggyBank, Home, Car, GraduationCap, Wallet } from "lucide-
 
 export const Route = createFileRoute("/personal")({
   head: () => ({ meta: [
-    { title: "Personal Banking — Northwind Bank" },
+    { title: "Personal Banking — Bank" },
     { name: "description", content: "Checking, savings, credit cards, mortgages and auto loans for everyday life." },
-    { property: "og:title", content: "Personal Banking — Northwind Bank" },
+    { property: "og:title", content: "Personal Banking — Bank" },
     { property: "og:description", content: "Checking, savings, credit cards, mortgages and auto loans." },
   ] }),
   component: Page,
@@ -23,7 +23,7 @@ const products = [
 
 function Page() {
   return (
-    <PageShell eyebrow="Personal" title="Banking that fits your life" lead="From your first paycheck to your forever home — Northwind has an account, card, or loan for every step.">
+    <PageShell eyebrow="Personal" title="Banking that fits your life" lead="From your first paycheck to your forever home — our has an account, card, or loan for every step.">
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {products.map((p) => (
           <div key={p.name} className="rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1" style={{ boxShadow: "var(--shadow-card)" }}>

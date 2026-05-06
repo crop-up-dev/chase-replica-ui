@@ -49,7 +49,7 @@ function Hero() {
         {/* Promo card */}
         <div className="flex flex-col justify-center text-primary-foreground lg:flex-row lg:items-center lg:gap-10">
           <div className="hidden shrink-0 overflow-hidden rounded-md bg-card p-5 lg:block" style={{ boxShadow: "var(--shadow-card)" }}>
-            <img src={heroImg} alt="Northwind community partner" className="h-56 w-56 rounded object-cover" />
+            <img src={heroImg} alt="our community partner" className="h-56 w-56 rounded object-cover" />
           </div>
           <div>
             <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-card/15 px-3 py-1 text-xs font-medium text-primary-foreground">
@@ -59,7 +59,7 @@ function Hero() {
               Proud partner of community arts &amp; education.
             </h1>
             <p className="mt-4 max-w-xl text-base text-primary-foreground/85">
-              Northwind invests in the people and programs that make our neighborhoods stronger.
+              our invests in the people and programs that make our neighborhoods stronger.
             </p>
             <button className="mt-6 inline-flex items-center gap-2 rounded-md bg-card px-5 py-2.5 text-sm font-semibold text-primary transition hover:brightness-95">
               Learn more
@@ -168,23 +168,23 @@ function CardTiles() {
   const cards = [
     {
       tone: "light" as const,
-      brand: "Northwind Credit Cards",
+      brand: "our Credit Cards",
       icon: CreditCard,
       title: "See if you're preapproved",
-      body: "Find which Northwind credit cards you may be preapproved for in just a few moments. Plus, there's no impact to your credit score.",
+      body: "Find which our credit cards you may be preapproved for in just a few moments. Plus, there's no impact to your credit score.",
       cta: "Get started",
     },
     {
       tone: "dark" as const,
-      brand: "Northwind Horizon Rewards®",
+      brand: "our Horizon Rewards®",
       icon: CreditCard,
       title: "Earn 75,000 bonus points",
-      body: "Plus, earn 5x total points on Northwind Travel℠, 3x points on dining, 2x points on all other travel purchases, and more. Terms apply.",
+      body: "Plus, earn 5x total points on our Travel℠, 3x points on dining, 2x points on all other travel purchases, and more. Terms apply.",
       cta: "See details",
     },
     {
       tone: "light" as const,
-      brand: "Northwind Auto",
+      brand: "our Auto",
       icon: Car,
       title: "Get prequalified in seconds",
       body: "Learn how much you can borrow with no impact on your credit score.",
@@ -254,7 +254,7 @@ function InvestPromo() {
         <div>
           <h2 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">Commission-free online trades — plus a bonus</h2>
           <p className="mt-4 text-base text-muted-foreground">
-            This is an invitation to get up to $1,000 when you open and fund a Northwind Self-Directed Investing account — an investing experience that puts you in control.
+            This is an invitation to get up to $1,000 when you open and fund a our Self-Directed Investing account — an investing experience that puts you in control.
           </p>
           <button className="mt-6 rounded-sm bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
             Continue
@@ -285,7 +285,7 @@ function BonusRow() {
         <div>
           <h2 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">Start your money journey today</h2>
           <p className="mt-4 text-base text-muted-foreground">
-            As a new Northwind checking customer, get $125 when you open a Northwind Everyday Checking account with qualifying transactions. Plus, <strong className="text-foreground">$0 Monthly Service Fee for customers age 17–24</strong>.
+            As a new our checking customer, get $125 when you open a our Everyday Checking account with qualifying transactions. Plus, <strong className="text-foreground">$0 Monthly Service Fee for customers age 17–24</strong>.
           </p>
           <button className="mt-6 rounded-sm bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110">
             Open now

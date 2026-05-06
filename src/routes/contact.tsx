@@ -4,9 +4,9 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({ meta: [
-    { title: "Contact — Northwind Bank" },
-    { name: "description", content: "Get in touch with Northwind Bank — call, email, or visit a branch." },
-    { property: "og:title", content: "Contact — Northwind Bank" },
+    { title: "Contact — Bank" },
+    { name: "description", content: "Get in touch with Bank — call, email, or visit a branch." },
+    { property: "og:title", content: "Contact — Bank" },
     { property: "og:description", content: "Call, email, or visit a branch." },
   ] }),
   component: Page,
@@ -18,7 +18,7 @@ function Page() {
       <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
         <div className="space-y-6">
           {[
-            { icon: Phone, label: "Phone", value: "1-800-NORTHWIND" },
+            { icon: Phone, label: "Phone", value: "1-800-" },
             { icon: Mail, label: "Email", value: "support@northwind.example" },
             { icon: MapPin, label: "HQ", value: "270 Harbor St, Seattle, WA" },
           ].map((c) => (

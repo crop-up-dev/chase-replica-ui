@@ -3,9 +3,9 @@ import { PageShell } from "@/components/page-shell";
 
 export const Route = createFileRoute("/commercial")({
   head: () => ({ meta: [
-    { title: "Commercial Banking — Northwind Bank" },
+    { title: "Commercial Banking — Bank" },
     { name: "description", content: "Treasury, capital markets and industry expertise for mid-market and enterprise clients." },
-    { property: "og:title", content: "Commercial Banking — Northwind Bank" },
+    { property: "og:title", content: "Commercial Banking — Bank" },
     { property: "og:description", content: "Treasury, capital markets and industry expertise." },
   ] }),
   component: Page,
