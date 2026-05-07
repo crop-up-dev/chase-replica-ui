@@ -23,12 +23,9 @@ jobs:
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
-      # VITE_BASE_PATH is optional. If unset, vite.config.spa.ts auto-detects:
-      # - USER.github.io repos use /
-      # - project repos use /REPO/
       - name: Build SPA
         env:
-          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
+          VITE_BASE_PATH: /chase-replica-ui/
         run: bunx vite build --config vite.config.spa.ts
       - name: SPA fallback (copy index.html -> 404.html)
         run: cp dist/index.html dist/404.html
