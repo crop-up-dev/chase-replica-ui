@@ -23,6 +23,7 @@ jobs:
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
+      # VITE_BASE_PATH is set explicitly to ensure correct asset paths
       - name: Build SPA
         env:
           VITE_BASE_PATH: /chase-replica-ui/
